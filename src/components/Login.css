@@ -4,11 +4,75 @@
     gap: 8px;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .form {
     width: fit-content;
     display: flex;
     flex-direction: column;
+    gap: 8px;
+}
+
+.button {
+    padding: 4px;
+    background-color: blue;
+    width: fit-content;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.admin {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 500px;
+}
+
+.admin-section {
+    border: 1px solid black;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.link-button {
+    border: none;
+    font-size: 12px;
+}
+
+.link-button:hover {
+    cursor: pointer;
+}
+
+.players {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.teams {
+    display: flex;
+}
+
+.team {
+    width: 250px;
+    height: 200px;
+}
+
+.team-option{
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer
+}
+
+.team-option:hover {
+    background-color: black;
+    cursor: pointer
 }

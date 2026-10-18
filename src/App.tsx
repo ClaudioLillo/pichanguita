@@ -1,4 +1,4 @@
-import { useEffect, useState, type ChangeEvent } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 import { getPlayers } from './data/players';
@@ -15,11 +15,12 @@ import Login from './components/Login';
 
 
 function App() {
+  const token = localStorage.getItem("token");
   const dispatch = useDispatch();
   const { players} = useSelector((state: RootState) => state.players);
   const { matches} = useSelector((state: RootState) => state.matches);
   const { loading } = useSelector((state: RootState) => state.loading);
-  const [menuOption, setMenuOption] = useState(0);
+  const [menuOption, setMenuOption] = useState(token ? 2 : 0);
 
   useEffect(() => {
     getPlayers().then(data => {
