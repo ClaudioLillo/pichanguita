@@ -1,0 +1,14 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}

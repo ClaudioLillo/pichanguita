@@ -1,0 +1,44 @@
+.loader-container {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+}
+
+.loader {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: calc(50vh - 15px);
+    left: calc(50vw - 15px);
+    padding: 4px;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.loader img {
+    animation:
+        oscillate 0.25s linear infinite;
+    position: absolute;
+}
+
+@keyframes oscillate {
+    0% {
+        height: 30px;
+        top: 0;
+        width: 40px;
+    }
+
+    50% {
+        height: 40px;
+        top: -10px;
+        width: 30px;
+    }
+
+    100% {
+        height: 30px;
+        top: 0;
+        width: 40px;
+    }
+}
