@@ -5,8 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "save-images": "npx tsx scripts/saveImages.ts",
-    "sync": "bash ./scripts/sync.sh",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",

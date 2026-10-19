@@ -38,6 +38,30 @@ function App() {
     setMenuOption(option);
   }
 
+  const getNormalizedPlayers = (_players: Player[], matches: Match[]) => {
+    const points: Record<string, number> = {};
+    for (const match of matches) {
+      for (const p of match.team1) {
+        if (points[p.sk as string]){
+          points[p.sk as string] += match.result.team1;
+        } else {
+          points[p.sk as string] = match.result.team1;
+        }
+      }
+      for (const p of match.team2) {
+        if (points[p.sk as string]){
+          points[p.sk as string] += match.result.team2;
+        } else {
+          points[p.sk as string] = match.result.team2;
+        }
+      }
+    }
+    return points;
+  }
+
+  const points = getNormalizedPlayers(players, matches);
+  console.log(points);
+
   return (
     <div className="app">
       <Loader loading={loading} />
@@ -54,9 +78,9 @@ function App() {
     </div>
 
     {menuOption === 0 && players && players.map((player: Player) => (
-      <div key={player.name}>
-      <div>{player.name}</div>
-      <div>{player.points}</div>
+      <div key={player.name} className="table-player">
+        <div className="player-name">{player.name}</div>
+        <div>{points[player.sk as string]}</div>
       </div>
     ))}
 
@@ -67,7 +91,7 @@ function App() {
       <div className="match-teams">
         <div className="match-team">
           {match.team1.map((p)=>(
-            <div>{p.name}</div>
+            <div key={p.name}>{p.name}</div>
            ))}
         </div>
         <div className="match-team">

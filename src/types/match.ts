@@ -1,10 +1,12 @@
+import type { Player } from "./player";
+
 export type Match = {
-    team1: {name: string}[];
-    team2: {name: string}[];
+    team1: Player[];
+    team2: Player[];
     result: {
         team1: number;
         team2: number;
     },
     submittedBy: string;
-    date: number;
+    date: string;
 }

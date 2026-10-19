@@ -14,8 +14,8 @@ export const trainersSlice = createSlice({
     initialState,
     reducers: {
         'setPlayers': (state, action) => {
-            state.players = action.payload.sort((a: Player,b: Player)=>{
-                return a.points > b.points ? -1: 1
+            state.players = action.payload.sort((_a: Player,_b: Player)=>{
+                return 1
             })
         },
 
